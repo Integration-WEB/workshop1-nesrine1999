@@ -1,233 +1,83 @@
-/*
-________________________
-initialize
-________________________
-*/
-*,
-::after,
-::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/*
-________________________
-Font
-________________________
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&family=Montserrat&display=swap');
-html {
-    font-size: 100%; /* 16px default*/
-} 
-
-/*
-________________________
-CSS Variables
-________________________
-*/
-
-:root {
-    /* colors */
-    --primary-100: #ffe0e0;
-    --primary-200: #ffbebe;
-    --primary-300: #ff9d9d;
-    --primary-400: #ff7d7d;
-    --primary-500: #ff5c5c;
-    --primary-600: #cc4a4a;
-    --primary-700: #993737;
-    --primary-800: #662525;
-    --primary-900: #331212;
-
-    /* grey */
-    --grey-100: #f8fafc;
-    --grey-500: #64748b;
-    --grey-900: #0f172a;
-
-    /* fonts  */
-    --headingFont: 'Roboto', sans-serif;
-    --bodyFont: 'Montserrat', sans-serif;
-    --letterSpacing: 1px;
-    /* transitions */
-    --transition: 0.3s ease-in-out all;
-}
-
-/*
-________________________
-General settings
-________________________
-*/
-
 body {
-    background: var(--grey-100);
-    font-family: var(--bodyFont);
-    font-weight: 400;
-    line-height: 1.75;
-    color: var(--grey-900);
+    overflow-x: hidden;
+    color: #505962;
 }
 
-p {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    max-width: 40em;
-    padding-left: 10px;
+.service-wrap {
+    z-index: -999 !important;
 }
 
-h1,
-h2 {
-    margin: 0;
-    margin-bottom: 1.38rem;
-    padding-left: 2.5rem;
-    font-family: var(--headingFont);
-    font-weight: 400;
-    line-height: 1.3;
-    text-transform: capitalize;
-    letter-spacing: var(--letterSpacing);
+.service-background {
+    padding: 5rem 0;
+    z-index: 1000 !important;
+
 }
 
-h1 {
-    margin-top: 0;
-    font-size: 2.441rem;
+#contact {
+    z-index: 1000;
 }
 
-h2 {
-    font-size: 1.953rem;
-}
 
-a {
-    text-decoration: none;
-}
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
+/*============= FOOTER =============*/
 
-.img {
-    width: 100%;
+
+/*===== FIXED BACKGROUND IMG =====*/
+.fixed {
+    position: fixed;
+    /* The element is positioned relative to the viewport which means it always stays in the same place even if the page is scrolled.*/
     display: block;
-    object-fit: cover;
+    /* An element starts on a new line and takes the whole width. */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* The background image covers the entire container even if it's stretched or croped */
+    background-position: center center;
 }
 
-/*
-________________________
-Buttons
-________________________
-*/
-
-.btn {
-    cursor: pointer;
-    color: var(--white);
-    background: var(--primary-500);
-    border: transparent;
-    border-radius: 0.25rem;
-    letter-spacing: var(--letterSpacing);
-    padding: 0.375rem 0.75rem;
-    transition: var(--transtion);
-    text-transform: capitalize;
-    display: inline-block;
+.fixed-background {
+    position: relative;
+    /* The element is positioned relative to its normal position + set the top, bottom... properties to adjust the position */
+    width: 100%;
 }
 
-.btn:hover {
-    background: var(--primary-700);
+.fixed-wrap {
+    clip: rect(0, auto, auto, 0);
+    /*clip-path: inset(10%, 10%, 10%, 10%);*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/*
-________________________
-Navbar
-________________________
-*/
+/*============= MEDIA QUERIES =============*/
 
-
-
-/*
-________________________
-Positions
-________________________
-*/
-
-.container {
-    height: 400px;
-    width: 90vw;
-    border: 1px solid black;
-    margin-left: auto;
-    margin-right: auto;
+/* Devices under 1199px (xl) */
+@media (min-width: 1200px) {
 }
+/* Devices under 992px (lg) */
+@media (max-width: 992px) {
+    /*.caption{
+      top: 30%;*/
 
-.item {
-    height: 150px;
-    width: 150px;
-}
-
-.item1{
-    background-color: rgb(255, 190, 225);
-}
-
-.item2{
-    background-color: rgb(131, 204, 233)
-}
-
-/*
-________________________
-Units
-________________________
-*/
-.box__container {
-    height: auto;
-    margin: 10px;
-    width: 70%;
-}
-.box {
-    border: 1px solid var(--grey-900);
-    height: auto;
-    margin: 10px;
-    background-color: var(--primary-300);
-}
-
-.font__container {
-    height: auto;
-    margin: 10px;
-    font-size: 25px;
 }
 
 
-/*
-________________________
-Flex
-________________________
-*/
-.flex__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Devices under 768px (md) */
+@media (max-width: 768px) {
+
 }
+/* Devices under 576px (sm) */
+@media (max-width: 576px) {
 
-/*
-________________________
-Media Queries
-________________________
-*/
-.media__container{
-    height: 20vh;
-    width: 90vw;
-    margin-bottom: 50px;
-    background-color: var(--primary-100);
 }
-/* Extra small devices (phones, 600px and down) */
-
-
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-
-
-
-/* Medium devices (landscape tablets, 768px and up) */
-
-
-
-/* Large devices (laptops/desktops, 992px and up) */
-
-
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+/*.caption{
+  property: transform;
+  class: translate-middle;
+  translate(-50%, -50%);
+  x: translateX(-50%);
+  y: translateY(-50%);
+}*/
